@@ -9,7 +9,7 @@
 
 let firstName = "Juan";
 let lastName = "Perez";
-let email = "ecloudqa1+" + (Math.floor(Math.random() * 1000) + 1) + "@gmail.com";
+let email = "ecloudqa1+" + "aut" + (Math.floor((Math.random() * 10000)) + (Math.random() * 10000) + 1) + "@gmail.com";
 let password = "Ecloud123!!" // + (Math.floor(Math.random() * 10000000) + 1);
 
 exports.mockModel = {

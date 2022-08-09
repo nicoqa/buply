@@ -23,53 +23,42 @@ let inValidRegisterModel = mockModel.invalid.register;
 
 describe('Sign Up Section', () => {
     describe('Valid Sign Up', () => {
-        it('Valid Sign Up Admin', (done) => {
-            it('Valid Sign Up Superadmin', (done) => {
-                postAndStatus(url, signUpRoute, validRegisterModel, 202);
-                done();
-            });
-            it('Valid Sign Up Admin', (done) => {
-                postAndStatus(url, signUpRoute, validRegisterModel, 200);
-                done();
-            });
-            it('Valid Sign Up Operator', (done) => {
-                postAndStatus(url, signUpRoute, validRegisterModel, 200);
-                done();
-            });
+        it('Valid Sign Up', (done) => {
+            postAndStatus(url, signUpRoute, validRegisterModel, 200);
             done();
         });
     });
     describe('Invalid Sign Up', () => {
         describe('Check the required fields by not filling any data', () => {
-            xit('Email already taken', (done) => {
-                postAndStatus(url, signUpRoute, validRegisterModel, 200, "EMAIL_ALREADY_TAKEN");
+            it('Email already taken', (done) => {
+                postAndStatus(url, signUpRoute, validRegisterModel, 400, "EMAIL_ALREADY_TAKEN");
                 done();
             });
-            xit('No Firstname', (done) => {
+            it('No Firstname', (done) => {
                 postAndStatus(url, signUpRoute, inValidRegisterModel.noFirstName, 400, "firstName should not be empty");
                 done();
             });
-            xit('No lastName', (done) => {
-                postAndStatus(url, signUpRoute, inValidRegisterModel.noLastName, 400, ["lastName should not be empppty"]);
+            it('No lastName', (done) => {
+                postAndStatus(url, signUpRoute, inValidRegisterModel.noLastName, 400, "lastName should not be empty");
                 done();
             });
-            xit('No email', (done) => {
-                error = "[ 'email must be an email', 'email should not be empty' ]"
-                postAndStatus(url, signUpRoute, inValidRegisterModel.noEmail, 400, error);
+            it('No email', (done) => {
+                postAndStatus(url, signUpRoute, inValidRegisterModel.noEmail, 400, "email must be an email");
+                postAndStatus(url, signUpRoute, inValidRegisterModel.noEmail, 400, "email should not be empty");
                 done();
             });
-            xit('Email with invalid format', (done) => {
+            it('Email with invalid format', (done) => {
                 it('Email without .com', (done) => {
                     postAndStatus(url, signUpRoute, inValidRegisterModel.noFormatEmail.noCom, 400, "email muste be an email");
                     done();
                 });
                 it('Email without @', (done) => {
-                    postAndStatus(url, signUpRoute, inValidRegisterModel.noFormatEmail.noAt, 400, ["email must be an email"]);
+                    postAndStatus(url, signUpRoute, inValidRegisterModel.noFormatEmail.noAt, 400, "email must be an email");
                     done();
                 });
                 done();
             });
-            xit('No password', (done) => {
+            it('No password', (done) => {
                 postAndStatus(url, signUpRoute, inValidRegisterModel.noPassword, 400, "password should not be empty");
                 done();
             })

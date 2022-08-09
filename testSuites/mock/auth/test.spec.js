@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 const { routes } = require('../../../routes');
 const url = `${process.env.URL_API_STG}`;
-let { get_and_status, post_and_return, post_and_status } = require('../../../lib/common');
+let { getAndStatus, postAndReturn, postAndStatus } = require('../../../lib/common');
 
 function ok() {
     expect(1).to.equal(1);
@@ -43,7 +43,7 @@ describe('Describe', () => {
 
 describe('TestAPI', () => {
     it('Se recibe una respuesta 200?',(done) => {
-        get_and_status(url,"",200);
+        getAndStatus(url,"",200);
         done();
         })
 })

@@ -28,7 +28,7 @@ describe('Sign In Section', () => {
         postAndStatus(url, signInRoute, validLogin, 200);
         done();
     });
-    describe('Invalid Sign Ip', () => {
+    describe('Invalid Sign In', () => {
         it('No email', (done) => {
             postAndStatus(url, signInRoute, invalidLogin.noEmail, 400, messageMissingCredential);
             done();
@@ -47,3 +47,20 @@ describe('Sign In Section', () => {
         });
     });
 });
+
+
+/**
+ * Esto es para loguear distintos usuarios por ACL
+ *         it('Valid Sign Up Superadmin', (done) => {
+            postAndStatus(url, signUpRoute, validRegisterModel, 200);
+            done();
+        });
+        it('Valid Sign Up Admin', (done) => {
+            postAndStatus(url, signUpRoute, validRegisterModel, 200);
+            done();
+        });
+        it('Valid Sign Up Operator', (done) => {
+            postAndStatus(url, signUpRoute, validRegisterModel, 200);
+            done();
+        });
+ */
