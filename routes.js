@@ -6,7 +6,16 @@ exports.routes = {
             signUp: "auth/sign-up/mock"
         }
     },
-    admin: {
+    admins: {
+        create: "admins",
+        readOne: "users",
+        readAll: "users",
+        readMe: "users",
+        update: "users",
+        updateMe: "users",
+        delete: "users"
+    },
+    users: {
         create: "users",
         readOne: "users",
         readAll: "users",
@@ -17,10 +26,10 @@ exports.routes = {
     },
     auth: {
         admin: {
-            login: "users/login",
-            register: "auth/register/",
-            recoveryPassword: "auth/reset-password/",
-            resetPassword: "auth/reset-password/"
+            login: "/auth/admins/sign-in",
+            register: "/auth/admins/sign-up",
+            recoveryPassword: "/auth/admins/forgot-password",
+            resetPassword: "/auth/admins/password-reset"
         },
         client: {
             login: "",
@@ -28,6 +37,13 @@ exports.routes = {
             recoveryPassword: "",
             resetPassword: ""
         }
+    },
+    crudl: {
+        create: "",
+        read: "",
+        update: "",
+        delete: "",
+        list: ""
     },
     client: {
         create: "",

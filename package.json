@@ -121,11 +121,12 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "mocha /Users/niqa/Documents/Automation/Buply/V1/testSuites/mock/auth/test.spec.js --timeout 20000",
-    "test_mock_auth_signup": "mocha /Users/niqa/Documents/Automation/Nativas/V2/testSuites/mock/auth/signup.spec.js --timeout 20000",
-    "test_mock_auth_signin": "mocha /Users/niqa/Documents/Automation/Nativas/V2/testSuites/mock/auth/signin.spec.js --timeout 20000",
-    "test_mock_auth": "mocha /Users/niqa/Documents/Automation/Nativas/V2/testSuites/mock/auth/* --timeout 20000",
-    "test_mock_all": "mocha /Users/niqa/Documents/Automation/Nativas/V2/testSuites/**/* --timeout 20000"
+    "test": "mocha /Users/niqa/Documents/Automation/buply/testSuites/mock/auth/test.spec.js --timeout 20000",
+    "test_mock_auth_signup": "mocha /Users/niqa/Documents/Automation/buply/testSuites/mock/auth/signup.spec.js --timeout 20000",
+    "test_mock_auth_signin": "mocha /Users/niqa/Documents/Automation/buply/testSuites/mock/auth/signin.spec.js --timeout 20000",
+    "test_mock_auth": "mocha /Users/niqa/Documents/buply/testSuites/mock/auth/* --timeout 20000",
+    "test_mock_all": "mocha /Users/niqa/Documents/buply/testSuites/**/* --timeout 20000",
+    "test_crudl": "mocha /Users/niqa/Documents/buply/testSuites/mock/crudl/crudl.spec.js --timeout 20000"
   },
   "author": "",
   "license": "ISC"

@@ -10,8 +10,21 @@ const { routes } = require('../../../routes');
 const { mockModel } = require('../../../testModels/mockModels');
 const signInRoute = routes.test.auth.signIn;
 const signUpRoute = routes.test.auth.signUp;
+const route = routes.admins.create;
 const url = `${process.env.URL_API_STG}`;
 let accessToken = post_and_return(url, signInRoute, mockModel.valid.login);
 
 let validRegisterModel = mockModel.valid.register;
 let inValidRegisterModel = mockModel.invalid.register;
+
+describe('CRUDL Test', () => {
+    it('Create Entity', (done) => {
+        console.log(url);
+        chai.request(url)
+            .get(route)
+            .end((error, response) => {
+                response.should.have.status(401);
+            done();
+        });
+    })
+});

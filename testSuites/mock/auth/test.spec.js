@@ -17,28 +17,33 @@ function noOk() {
 };
 
 
-/* describe('Describe', () => {
-    it('It', () => {
+describe('Describe', () => {
+    it('It', (done) => {
         expect(1).to.equal(1);
-        noOk();
+        ok();
+        done();
     });
     describe('Describe Interno', () => {
-        it('It Interno', () => {
+        it('It Interno', (done) => {
             expect(1).to.equal(1);
             ok();
+            done();
         });
-        it('It Interno', () => {
+        it('It Interno', (done) => {
             expect(1).to.equal(1);
-            noOk();
+            ok();
+            done();
         });
     });
-    it('It2', () => {
+    it('It2', (done) => {
         expect(1).to.equal(1);
+        done();
     });
-}); */
+});
 
 describe('TestAPI', () => {
-    it('Se recibe una respuesta 200?',() => {
+    it('Se recibe una respuesta 200?',(done) => {
         get_and_status(url,"",200);
-    })
+        done();
+        })
 })
